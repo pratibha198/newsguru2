@@ -7,7 +7,8 @@ export const NewsBoard = ({category}) => {
     const [articles,setArticles] = useState([]);
     useEffect(() => {
 
-      let url = `https://newsapi.org/v2/top-headlines?country=in&category=${category}&apiKey=${import.meta.env.VITE_API_KEY}`;
+      // https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=44ae8b2cfcc448f8b2e7e104351fe31e
+      let url = `https://newsapi.org/v2/top-headlines?country=us&category=${category}&apiKey=${import.meta.env.VITE_API_KEY}`;
         fetch(url).then(response => response.json()).then(data => setArticles(data.articles));
     }, [category])
     
